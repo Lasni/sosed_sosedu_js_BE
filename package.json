@@ -1,11 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/app-router-type.ts",
+  "types": "src/app-router-type.ts",
   "scripts": {
+    "env": "gen-env-types .env -o src/types/env.d.ts -e .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "nodemon src/index.ts",
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate"
   },
@@ -15,11 +16,21 @@
   "description": "",
   "devDependencies": {
     "drizzle-kit": "^0.23.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-safe": "^8.1.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/passport": "^1.0.16"
   },
   "dependencies": {
     "drizzle-orm": "^0.32.1",
     "express": "^4.19.2",
-    "postgres": "^3.4.4"
+    "postgres": "^3.4.4",
+    "dotenv-safe": "^9.1.0",
+    "passport": "^0.7.0",
+    "passport-discord-auth": "^1.1.1"
   }
 }
